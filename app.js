@@ -1,4 +1,7 @@
-const profileDataArgs = process.argv.slice(2, process.argv.length);
+const fs = require('fs');
+
+const generatePage = require('./src/page-template.js');
+
 // console.log(profileDataArgs);
 
 // const message = 'Hello Node!';
@@ -69,20 +72,39 @@ const profileDataArgs = process.argv.slice(2, process.argv.length);
 // console.log(message);
 // console.log(sum);
 
-const printProfileData = profileDataArr => {
-    // This...
-    for (let i = 0; i < profileDataArr.length; i += 1) {
-        console.log(profileDataArr[i]);
-    }
+// const printProfileData = profileDataArr => {
+//     // This...
+//     for (let i = 0; i < profileDataArr.length; i += 1) {
+//         console.log(profileDataArr[i]);
+//     }
 
-    console.log('================');
+//     console.log('================');
 
-    // Is the same as this...
-    // profileDataArr.forEach((profileItem) => {
-    //     console.log(profileItem);
-    // });
+// Is the same as this...
+// profileDataArr.forEach((profileItem) => {
+//     console.log(profileItem);
+// });
 
-    profileDataArr.forEach(profileItem => console.log(profileItem));
-};
+//     profileDataArr.forEach(profileItem => console.log(profileItem));
+// };
 
-printProfileData(profileDataArgs);
+// printProfileData(profileDataArgs);
+
+
+// const generatePage = () => 'Name: Jane, Github: janehub';
+// console.log(generatePage());
+
+// With template literals, we can wrap the string in backticks and interpolate the variables with the ${<variable>} syntax.
+// const generatePage = (userName, githubName) => `Name: ${userName}, Github: ${githubName}`;
+// console.log(generatePage('Jane', 'janehub'));
+
+// Multi-line Strings
+// const generatePage = (userName, githubName) => {
+//     return `
+//       Name: ${userName}
+//       GitHub: ${githubName}
+//     `;
+// };
+// console.log(generatePage('Jane', 'janehub'));
+// console.log(name, github);
+// console.log(generatePage(name, github));
