@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 const fs = require('fs');
+=======
+>>>>>>> 67477c3259614dc298936f41feabacde9af478f5
 const profileDataArgs = process.argv.slice(2, process.argv.length);
 // const name = profileDataArgs[0];
 // const github = profileDataArgs[1];
