@@ -1,6 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-// const generatePage = require('./src/page-template.js');
+const generatePage = require('./src/page-template');
 
 // const pageHTML = generatePage(name, github);
 
@@ -150,12 +150,23 @@ Add a New Project
     });
 };
 
+
+//   const pageHTML = generatePage(mockData);
+
 // promptUser()
 //     .then(answers => console.log(answers))
 //     .then(promptProject)
 //     .then(projectAnswers => console.log(projectAnswers))
+
 promptUser()
     .then(promptProject)
     .then(portfolioData => {
-        console.log(portfolioData);
+        // console.log(portfolioData);
+        const pageHTML = generatePage(portfolioData);
+
+        fs.writeFile('./index.html', pageHTML, err => {
+            if (err) throw new Error(err);
+
+            console.log('Page created! Check out index.html in this directory to see it!');
+        });
     });
